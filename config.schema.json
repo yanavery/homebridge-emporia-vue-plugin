@@ -1,0 +1,47 @@
+{
+  "pluginAlias": "EmporiaVueVirtualSwitchPlugin",
+  "pluginType": "platform",
+  "singular": true,
+  "strictValidation": false,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "required": true,
+        "default": "Emporia-Vue Virtual Switch"
+      },
+      "emporiaVueUsername": {
+        "title": "Emporia Vue Username",
+        "type": "string",
+        "required": true,
+        "default": ""
+      },
+      "emporiaVuePassword": {
+        "title": "Emporia Vue Password",
+        "type": "string",
+        "required": true,
+        "default": ""
+      },
+      "emporiaVueChannelName": {
+        "title": "Emporia Vue Channel Name",
+        "type": "string",
+        "required": true,
+        "default": ""
+      },
+      "wattageThreshold": {
+        "title": "Device Wattage Threshold",
+        "type": "number",
+        "required": true,
+        "default": 10
+      },
+      "refreshIntervalMinutes": {
+        "title": "Refresh Interval (minutes)",
+        "type": "number",
+        "required": true,
+        "default": 15
+      }
+    }
+  }
+}

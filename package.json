@@ -1,0 +1,64 @@
+{
+  "name": "homebridge-emporia-vue-plugin",
+  "displayName": "Emporia Vue Plugin for Homebridge",
+  "type": "module",
+  "version": "0.0.3",
+  "private": false,
+  "description": "Virtual Switch that turns ON and OFF based on Emporia Vue device threashold",
+  "author": "Yan Avery",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/yanavery/homebridge-emporia-vue-plugin/#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yanavery/homebridge-emporia-vue-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yanavery/homebridge-emporia-vue-plugin/issues"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "emporia",
+    "vue",
+    "energy",
+    "monitoring",
+    "typescript",
+    "home-automation"
+  ],
+  "main": "dist/index.js",
+  "engines": {
+    "node": "^18.20.4 || ^20.18.0 || ^22.10.0",
+    "homebridge": "^1.8.0 || ^2.0.0-beta.0"
+  },
+  "scripts": {
+    "build": "rimraf ./dist && tsc",
+    "local": "npm run build && node ./dist/index.js",
+    "test": "rimraf ./dist && jest",
+    "lint": "eslint . --max-warnings=0",
+    "prepublishOnly": "npm run lint && npm run build",
+    "watch": "npm run build && npm link && nodemon"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.8.6",
+    "@types/node-cron": "^3.0.11",
+    "eslint": "^9.14.0",
+    "homebridge": "^2.0.0-beta.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.7",
+    "rimraf": "^6.0.1",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.12.2"
+  },
+  "dependencies": {
+    "homebridge-lib": "^7.1.0",
+    "moment-timezone": "^0.5.46",
+    "node-cron": "^3.0.3",
+    "pino": "^9.6.0",
+    "pino-pretty": "^13.0.0",
+    "emporia-vue-lib": "^1.0.0"
+  }
+}
