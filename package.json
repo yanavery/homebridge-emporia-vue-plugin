@@ -2,7 +2,7 @@
   "name": "homebridge-emporia-vue-plugin",
   "displayName": "Emporia Vue Plugin for Homebridge",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "description": "Virtual Switch that turns ON and OFF based on Emporia Vue device threashold",
   "author": "Yan Avery",

@@ -29,7 +29,7 @@ export class EmporiaVueIntegration {
   }
 
   getCronSchedules(): string[] {
-    return [ `${this.refreshIntervalMinutes} * * * *` ]; // runs status update every X minutes
+    return [ `*/${this.refreshIntervalMinutes} * * * *` ]; // runs status update every X minutes
   }
 
   // Return current state (boolean) from Emporia API based on channel's current watts usage

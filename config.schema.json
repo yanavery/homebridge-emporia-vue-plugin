@@ -37,7 +37,7 @@
         "default": 10
       },
       "refreshIntervalMinutes": {
-        "title": "Refresh Interval (minutes)",
+        "title": "Refresh Interval (1-59 minutes)",
         "type": "number",
         "required": true,
         "default": 15

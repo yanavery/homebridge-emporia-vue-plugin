@@ -46,18 +46,21 @@ export class EmporiaVueVirtualSwitchPlatform implements DynamicPlatformPlugin {
     this.Service = api.hap.Service;
     this.Characteristic = api.hap.Characteristic;
 
+    // make sure the refresh interval is between 1 and 59 minutes
+    const refreshMinutes = Math.min(Math.max(this.config.refreshIntervalMinutes || 15, 1), 59);
+
     this.log.info('Emporia Vue Virtual Switch Plugin Loaded');
     this.log.info(`Config "emporiaVueUsername" --> ${this.maskValue(this.config.emporiaVueUsername)}`);
     this.log.info(`Config "emporiaVuePassword" --> ${this.maskValue(this.config.emporiaVuePassword)}`);
     this.log.info(`Config "emporiaVueChannelName" --> ${this.config.emporiaVueChannelName}`);
     this.log.info(`Config "wattageThreshold" --> ${this.config.wattageThreshold}`);
-    this.log.info(`Config "refreshIntervalMinutes" --> ${this.config.refreshIntervalMinutes}`);
+    this.log.info(`Config "refreshIntervalMinutes" --> ${refreshMinutes}`);
 
     // setup the Emporia Vue integration
     this.emporia = new EmporiaVueIntegration(
       this.config.emporiaVueChannelName || 'Unknown Channel',
       this.config.wattageThreshold || 10,
-      this.config.refreshIntervalMinutes || 15,
+      refreshMinutes,
       this.config.emporiaVueUsername || '--NoUsernameSet--',
       this.config.emporiaVuePassword || '--NoPasswordSet--',
       this.log);
